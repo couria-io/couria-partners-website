@@ -1,0 +1,251 @@
+/* --- Brand Colors --- */
+:root {
+    --couria-blue: #004d80; /* Deep Professional Blue */
+    --couria-orange: #e76f51; /* Accent Color (from logo/box) */
+    --couria-light: #f4f4f4;
+    --couria-text: #333333;
+    --couria-white: #ffffff;
+}
+
+/* --- Base Styles --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--couria-text);
+    background-color: var(--couria-white);
+}
+
+h1, h2, h3 {
+    color: var(--couria-blue);
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--couria-blue);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 40px; /* Adjust as needed */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--couria-white);
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cta-link {
+    background-color: var(--couria-orange);
+    border-radius: 5px;
+    margin-left: 15px;
+    padding: 10px 20px !important;
+}
+
+.cta-link:hover {
+    background-color: #d85c41; /* Darker orange on hover */
+}
+
+
+/* --- Hero Section --- */
+#hero {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    /* Use a high-quality image of a delivery van, warehouse, or abstract tech pattern */
+    /* You need to name one of your images "hero-bg.jpg" and put it in the /images folder */
+}
+
+.hero-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 77, 128, 0.7); /* Blue overlay for text readability */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#hero h1 {
+    color: var(--couria-white);
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+#hero p {
+    color: var(--couria-light);
+    font-size: 1.2em;
+    margin-bottom: 2em;
+}
+
+.cta-button {
+    background-color: var(--couria-orange);
+    color: var(--couria-white);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 1.1em;
+}
+
+.cta-button:hover {
+    background-color: #d85c41;
+}
+
+/* --- Pillars Section --- */
+#pillars {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: var(--couria-light);
+}
+
+#pillars h2 {
+    margin-bottom: 40px;
+}
+
+.pillar-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pillar {
+    flex-basis: 30%;
+    padding: 20px;
+    background-color: var(--couria-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.pillar img {
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.pillar h3 {
+    color: var(--couria-orange);
+    margin-top: 0;
+}
+
+/* --- SaaS Platform Section --- */
+#saas-platform {
+    background-color: var(--couria-blue);
+    color: var(--couria-white);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.saas-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#saas-platform h2 {
+    color: var(--couria-orange);
+    margin-bottom: 20px;
+}
+
+#saas-platform p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+#saas-platform ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+#saas-platform li {
+    font-weight: bold;
+    font-size: 1em;
+    position: relative;
+    padding-left: 20px;
+}
+
+#saas-platform li::before {
+    content: "✓";
+    color: var(--couria-orange);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.secondary-button {
+    background-color: var(--couria-white);
+    color: var(--couria-blue);
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.secondary-button:hover {
+    background-color: var(--couria-light);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--couria-text);
+    color: var(--couria-light);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+.footer-contact a {
+    color: var(--couria-orange);
+    text-decoration: none;
+}
