@@ -1,32 +1,60 @@
-/* --- Brand Colors --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+
 :root {
-    --couria-blue: #004d80; /* Deep Professional Blue */
-    --couria-orange: #e76f51; /* Accent Color (from logo/box) */
-    --couria-light: #f4f4f4;
+    --couria-blue: #004d80;
+    --couria-blue-dark: #003557;
+    --couria-blue-light: #0066a8;
+    --couria-orange: #e76f51;
+    --couria-orange-dark: #d85c41;
+    --couria-light: #f8f9fa;
     --couria-text: #333333;
+    --couria-text-light: #6c757d;
     --couria-white: #ffffff;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
-/* --- Base Styles --- */
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: var(--couria-text);
     background-color: var(--couria-white);
+    line-height: 1.6;
 }
 
 h1, h2, h3 {
+    font-family: 'Space Grotesk', sans-serif;
     color: var(--couria-blue);
+    line-height: 1.2;
 }
 
-/* --- Header & Navigation --- */
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
 header {
     background-color: var(--couria-blue);
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: var(--shadow-md);
 }
 
 nav {
@@ -35,62 +63,63 @@ nav {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px 20px;
+    padding: 1rem 2rem;
 }
 
-.logo img {
-    height: 40px; /* Adjust as needed */
+.logo h2 {
+    color: var(--couria-white);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
-nav ul {
+.nav-menu {
     list-style: none;
     display: flex;
-    margin: 0;
-    padding: 0;
+    gap: 0.5rem;
+    align-items: center;
 }
 
-nav ul li a {
+.nav-menu li a {
     text-decoration: none;
     color: var(--couria-white);
-    padding: 10px 15px;
+    padding: 0.75rem 1.25rem;
     display: block;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    font-weight: 500;
 }
 
-nav ul li a:hover {
+.nav-menu li a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
 .cta-link {
-    background-color: var(--couria-orange);
-    border-radius: 5px;
-    margin-left: 15px;
-    padding: 10px 20px !important;
+    background-color: var(--couria-orange) !important;
+    padding: 0.75rem 1.5rem !important;
 }
 
 .cta-link:hover {
-    background-color: #d85c41; /* Darker orange on hover */
+    background-color: var(--couria-orange-dark) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
-
-/* --- Hero Section --- */
 #hero {
-    height: 70vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     text-align: center;
     position: relative;
     overflow: hidden;
+    background: linear-gradient(135deg, var(--couria-blue-dark) 0%, var(--couria-blue) 50%, var(--couria-blue-light) 100%);
 }
 
 .hero-image {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
-    /* Use a high-quality image of a delivery van, warehouse, or abstract tech pattern */
-    /* You need to name one of your images "hero-bg.jpg" and put it in the /images folder */
+    background: linear-gradient(135deg, var(--couria-blue-dark) 0%, var(--couria-blue) 50%, var(--couria-blue-light) 100%);
 }
 
 .hero-image::before {
@@ -100,86 +129,113 @@ nav ul li a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 77, 128, 0.7); /* Blue overlay for text readability */
+    background: radial-gradient(circle at 30% 50%, rgba(231, 111, 81, 0.2) 0%, transparent 50%);
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 3rem 2rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 #hero h1 {
     color: var(--couria-white);
-    font-size: 3em;
-    margin-bottom: 0.5em;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #hero p {
-    color: var(--couria-light);
-    font-size: 1.2em;
-    margin-bottom: 2em;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
 }
 
 .cta-button {
     background-color: var(--couria-orange);
     color: var(--couria-white);
-    padding: 15px 30px;
+    padding: 1rem 2.5rem;
     text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    display: inline-block;
+    box-shadow: var(--shadow-md);
 }
 
 .cta-button:hover {
-    background-color: #d85c41;
+    background-color: var(--couria-orange-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
 }
 
-/* --- Pillars Section --- */
 #pillars {
-    padding: 60px 20px;
+    padding: 5rem 2rem;
     text-align: center;
     background-color: var(--couria-light);
 }
 
 #pillars h2 {
-    margin-bottom: 40px;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
 }
 
 .pillar-grid {
-    display: flex;
-    justify-content: space-around;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .pillar {
-    flex-basis: 30%;
-    padding: 20px;
+    padding: 2.5rem 2rem;
     background-color: var(--couria-white);
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
 }
 
-.pillar img {
-    height: 60px;
-    margin-bottom: 15px;
+.pillar:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.pillar-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .pillar h3 {
     color: var(--couria-orange);
-    margin-top: 0;
+    margin: 1rem 0;
 }
 
-/* --- SaaS Platform Section --- */
+.pillar p {
+    color: var(--couria-text-light);
+    line-height: 1.7;
+}
+
 #saas-platform {
-    background-color: var(--couria-blue);
+    background: linear-gradient(135deg, var(--couria-blue) 0%, var(--couria-blue-dark) 100%);
     color: var(--couria-white);
-    padding: 60px 20px;
+    padding: 5rem 2rem;
     text-align: center;
 }
 
@@ -190,28 +246,32 @@ nav ul li a:hover {
 
 #saas-platform h2 {
     color: var(--couria-orange);
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
 }
 
 #saas-platform p {
-    font-size: 1.1em;
-    margin-bottom: 30px;
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.95);
 }
 
 #saas-platform ul {
     list-style: none;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
-    margin-bottom: 40px;
+    gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 #saas-platform li {
-    font-weight: bold;
-    font-size: 1em;
+    font-weight: 500;
+    font-size: 1.05rem;
     position: relative;
-    padding-left: 20px;
+    padding-left: 2rem;
 }
 
 #saas-platform li::before {
@@ -220,32 +280,305 @@ nav ul li a:hover {
     font-weight: bold;
     position: absolute;
     left: 0;
+    font-size: 1.3rem;
 }
 
 .secondary-button {
     background-color: var(--couria-white);
     color: var(--couria-blue);
-    padding: 12px 25px;
+    padding: 1rem 2rem;
     text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .secondary-button:hover {
     background-color: var(--couria-light);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
 }
 
-/* --- Footer --- */
+#contact-section {
+    padding: 5rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#contact-section h1 {
+    color: var(--couria-blue);
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+#contact-section > p {
+    color: var(--couria-text-light);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    text-align: left;
+    padding: 2.5rem;
+    background-color: var(--couria-light);
+    border-radius: 12px;
+    margin-top: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--couria-blue);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.875rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--couria-blue);
+    box-shadow: 0 0 0 3px rgba(0, 77, 128, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.form-submit-button {
+    width: 100%;
+    background-color: var(--couria-orange);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.form-submit-button:hover {
+    background-color: var(--couria-orange-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+#services-hero {
+    background: linear-gradient(135deg, var(--couria-blue) 0%, var(--couria-blue-dark) 100%);
+    color: var(--couria-white);
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.services-header h1 {
+    color: var(--couria-white);
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.services-header p {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+#services-detail {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.service-detail-card {
+    background-color: var(--couria-white);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.service-detail-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.service-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.service-detail-card h2 {
+    color: var(--couria-blue);
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.service-detail-card > p {
+    color: var(--couria-text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+}
+
+.service-features li {
+    padding: 0.75rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: var(--couria-text);
+    border-bottom: 1px solid var(--couria-light);
+}
+
+.service-features li:last-child {
+    border-bottom: none;
+}
+
+.service-features li::before {
+    content: "✓";
+    color: var(--couria-orange);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+#services-cta {
+    background: linear-gradient(135deg, var(--couria-blue-dark) 0%, var(--couria-blue) 100%);
+    color: var(--couria-white);
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.cta-content h2 {
+    color: var(--couria-white);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.95);
+}
+
 footer {
     background-color: var(--couria-text);
     color: var(--couria-light);
     text-align: center;
-    padding: 20px;
-    font-size: 0.9em;
+    padding: 2.5rem 2rem;
+    font-size: 0.95rem;
+}
+
+.footer-contact {
+    margin-top: 1rem;
 }
 
 .footer-contact a {
     color: var(--couria-orange);
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: var(--couria-orange-dark);
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 1rem;
+    }
+
+    .logo h2 {
+        font-size: 1.25rem;
+    }
+
+    .nav-menu {
+        gap: 0.25rem;
+    }
+
+    .nav-menu li a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .cta-link {
+        padding: 0.5rem 1rem !important;
+    }
+
+    #hero h1,
+    .services-header h1 {
+        font-size: 2rem;
+    }
+
+    #hero p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    #pillars,
+    #saas-platform,
+    #contact-section,
+    #services-detail,
+    #services-cta {
+        padding: 3rem 1.5rem;
+    }
+
+    .pillar-grid,
+    #services-detail {
+        grid-template-columns: 1fr;
+    }
+
+    #saas-platform ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero h1,
+    .services-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .nav-menu li a {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .cta-button,
+    .secondary-button {
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+    }
 }

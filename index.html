@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Couria Partners Limited - Technology That Drives Modern Logistics</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="images/logo.png"> 
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <img src="images/logo-white.png" alt="Couria Partners Limited Logo">
+                <h2>Couria Partners</h2>
             </div>
-            <ul>
+            <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html" class="cta-link">Contact Us</a></li>
@@ -23,11 +22,11 @@
 
     <main>
         <section id="hero">
-            <div class="hero-image" style="background-image: url('images/hero-bg.jpg');">
+            <div class="hero-image">
                 <div class="hero-content">
                     <h1>Technology That Drives Modern Logistics.</h1>
                     <p>Couria Partners Limited designs and deploys efficient logistics platforms, enterprise software, and cloud solutions for a connected world.</p>
-                    <a href="#services" class="cta-button">Explore Our Solutions</a>
+                    <a href="#pillars" class="cta-button">Explore Our Solutions</a>
                 </div>
             </div>
         </section>
@@ -36,17 +35,17 @@
             <h2>Our Core Service Pillars</h2>
             <div class="pillar-grid">
                 <div class="pillar">
-                    <img src="images/icon-truck.png" alt="Logistics Icon">
+                    <div class="pillar-icon">🚚</div>
                     <h3>Efficient Logistics Technology</h3>
                     <p>Development and operation of courier service optimization, package tracking, and route optimization platforms.</p>
                 </div>
                 <div class="pillar">
-                    <img src="images/icon-code.png" alt="Software Icon">
+                    <div class="pillar-icon">💻</div>
                     <h3>Software Development & Cloud Solutions</h3>
                     <p>Bespoke software design, cloud-based solution architecture, and custom application deployment.</p>
                 </div>
                 <div class="pillar">
-                    <img src="images/icon-gear.png" alt="Automation Icon">
+                    <div class="pillar-icon">⚙️</div>
                     <h3>Business Process Automation (BPA)</h3>
                     <p>Digital transformation consulting, workflow management, and ERP systems integration for process optimization.</p>
                 </div>
@@ -63,129 +62,6 @@
                     <li>Data Analytics and Reporting Services</li>
                 </ul>
                 <a href="contact.html" class="secondary-button">Learn About Our APIs</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Couria Partners Limited. All rights reserved.</p>
-        <div class="footer-contact">
-            Email: <a href="mailto:info@couriapartners.com">info@couriapartners.com</a>
-        </div>
-    </footer>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Couria Partners Limited</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="images/logo.png"> 
-    <style>
-        /* Add specific styles for the contact page */
-        #contact-section {
-            padding: 80px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        #contact-section h1 {
-            color: var(--couria-blue);
-            margin-bottom: 10px;
-        }
-
-        .contact-form {
-            text-align: left;
-            padding: 30px;
-            background-color: var(--couria-light);
-            border-radius: 8px;
-            margin-top: 30px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: var(--couria-blue);
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box; /* Ensures padding doesn't affect total width */
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        .form-submit-button {
-            width: 100%;
-            background-color: var(--couria-orange);
-            color: white;
-            padding: 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.1em;
-            transition: background-color 0.3s;
-        }
-
-        .form-submit-button:hover {
-            background-color: #d85c41;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="images/logo-white.png" alt="Couria Partners Limited Logo">
-            </div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html" class="cta-link">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="contact-section">
-            <h1>Partner With Us</h1>
-            <p>Ready to optimize your logistics or begin your digital transformation? Fill out the form below and an expert will be in touch shortly.</p>
-
-            <div class="contact-form">
-                <form action="YOUR_FORM_SUBMISSION_ENDPOINT" method="POST">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="company">Company Name</label>
-                        <input type="text" id="company" name="company">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">How can we help?</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="form-submit-button">Send Message</button>
-                </form>
             </div>
         </section>
     </main>
